@@ -92,7 +92,7 @@ export const AppLayout = ({ children, showNav = true, showLogo = true, showAvata
                   </button>
                 </SheetTrigger>
                 
-                <SheetContent side="right" className="w-[85%] sm:w-[380px] flex flex-col p-0 gap-0 border-l dark:border-border dark:bg-background">
+                <SheetContent side="right" className="w-[85%] sm:w-95 flex flex-col p-0 gap-0 border-l dark:border-border dark:bg-background">
                   
                   <SheetHeader className="p-6 border-b border-gray-100 dark:border-border text-left">
                     <SheetTitle className="flex items-center gap-2 font-heading text-xl dark:text-foreground">

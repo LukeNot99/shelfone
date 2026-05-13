@@ -1,20 +1,24 @@
-/* 1. GLI IMPORT VANNO SEMPRE PER PRIMI */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-/* 2. POI I PLUGIN */
+
 @plugin "tailwindcss-animate";
 
-/* 3. POI LE VARIANTI PERSONALIZZATE */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* 4. INFINE LA CONFIGURAZIONE DEL TEMA */
+@keyframes accordion-down {
+  from { height: 0; }
+  to   { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to   { height: 0; }
+}
+
 @theme {
-  /* Font Personalizzati */
   --font-heading: "FONTSPRING DEMO - All Round Gothic Thick", system-ui, sans-serif;
   --font-body: "Montserrat Alternates", system-ui, sans-serif;
 
-  /* Colori Brand ShelfOne */
   --color-shelf-blue: #0088FF;
   --color-shelf-blue-light: #80CFFE;
   --color-shelf-gray: #324054;
@@ -24,7 +28,6 @@
   --color-shelf-silver: #B4B4B4;
   --color-shelf-bronze: #AD8A56;
 
-  /* Mapping Colori Semantici (Shadcn UI) */
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -52,7 +55,6 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
-  /* Sidebar Colors */
   --color-sidebar: hsl(var(--sidebar-background));
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-primary: hsl(var(--sidebar-primary));
@@ -62,26 +64,14 @@
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 
-  /* Border Radius */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-  /* Animazioni */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  @keyframes accordion-down {
-    from { height: 0; }
-    to { height: var(--radix-accordion-content-height); }
-  }
-  @keyframes accordion-up {
-    from { height: var(--radix-accordion-content-height); }
-    to { height: 0; }
-  }
 }
 
-/* 5. LIVELLI CSS STANDARD */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -104,8 +94,7 @@
     --input: 0 0% 88%;
     --ring: 203 100% 50%;
     --radius: 1rem;
-    
-    /* Sidebar variables */
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 210 15% 20%;
     --sidebar-primary: 203 100% 50%;
@@ -149,20 +138,19 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--color-border);
   }
 
   body {
-    /* Texture carta */
-    background-color: #fdfbf7; 
+    background-color: #fdfbf7;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
-    @apply text-foreground font-body;
+    color: var(--color-foreground);
+    font-family: var(--font-body);
   }
 
-  /* In dark mode, reset background */
   .dark body {
     background-image: none;
-    @apply bg-background;
+    background-color: var(--color-background);
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {

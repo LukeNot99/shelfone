@@ -58,7 +58,7 @@ export const BottomNav = () => {
         <Link
           to="/chat"
           className={cn(
-            "flex-shrink-0 w-20 h-20 rounded-[32px] flex items-center justify-center shadow-[0_8px_30px_rgb(0,136,255,0.3)] transition-all duration-300 hover:scale-105 active:scale-95",
+            "shrink-0 w-20 h-20 rounded-4xl flex items-center justify-center shadow-[0_8px_30px_rgb(0,136,255,0.3)] transition-all duration-300 hover:scale-105 active:scale-95",
             pathname === "/chat"
               ? "bg-shelf-blue dark:bg-shelf-blue text-white ring-4 ring-shelf-blue-light/30"
               : "bg-shelf-blue text-white"

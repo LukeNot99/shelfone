@@ -5,7 +5,7 @@ export default function Chat() {
   return (
     <AppLayout showNav={true}>
       <div className="space-y-6 md:space-y-8 pb-40 md:pb-48">
-        <div className="sticky top-[85px] md:top-[93px] z-20 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md flex items-center justify-between py-3 border-b border-shelf-border -mx-4 px-4 transition-all">
+        <div className="sticky top-21.25 md:top-23.25 z-20 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md flex items-center justify-between py-3 border-b border-shelf-border -mx-4 px-4 transition-all">
           <div className="flex items-center gap-3">
             <div className="relative">
                 <img 
