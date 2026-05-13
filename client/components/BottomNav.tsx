@@ -17,7 +17,7 @@ export const BottomNav = () => {
       <div className="max-w-[90%] md:max-w-2xl mx-auto flex items-end justify-between gap-3 pointer-events-auto">
         
  
-        <div className="flex-1 bg-white dark:bg-zinc-900 border border-white/20 dark:border-zinc-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-black/20 rounded-[32px] h-20 px-2 flex items-center justify-between">
+        <div className="flex-1 bg-white dark:bg-zinc-900 border border-white/20 dark:border-zinc-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-black/20 rounded-4xl h-20 px-2 flex items-center justify-between">
           {mainNavItems.map((item) => {
             const isActive = pathname === item.path;
             
